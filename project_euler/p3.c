@@ -6,7 +6,7 @@
 #include <stdlib.h>
 
 int is_prime(int64_t n) {
-    for (int64_t i = 2; i < sqrt(n); i++) {
+    for (int64_t i = 2; i < sqrt(n) + 1; i++) {
         if (n % i == 0) {
             return 0;
         }
@@ -18,7 +18,7 @@ int is_prime(int64_t n) {
 /* Enumerate */
 int64_t find_max_prime_factor_enumerate(int64_t n) {
     int max_prime_factor = 2;
-    for (int64_t i = 2; i < sqrt(n); i++) {
+    for (int64_t i = 2; i < sqrt(n) + 1; i++) {
         if ((n % i == 0) && is_prime(i)) {
             max_prime_factor = i;
         }
