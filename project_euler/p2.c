@@ -33,7 +33,6 @@ int enumerate(int limit) {
         fib_pre = temp;
 
         if (fib_now % 2 == 0) {
-            // printf("%d \n", fib_now);
             sum += fib_now;
         }
     }

@@ -38,7 +38,6 @@ int enumerate(int lb, int ub) {
 
     P = 10000a + 1000b + 100c + 10b + a
       = 10001a + 1010b + 100c
-
     GCD(10001, 1010, 100) = 1
 */
 

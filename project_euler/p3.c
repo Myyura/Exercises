@@ -99,6 +99,5 @@ int64_t find_max_prime_factor_rho(int64_t n) {
 int main(void) {
     printf("%lld\n", find_max_prime_factor_enumerate(600851475143));
     printf("%lld\n", find_max_prime_factor_rho(600851475143));
-
     return 0;
 }

@@ -49,4 +49,5 @@ int64_t find_lcm_of_range(int64_t lb, int64_t ub) {
 int main(void) {
     printf("%lld\n", find_lcm_of_range(1, 20));
     printf("%d\n", 2 * 3 * 5 * 7 * 11 * 13 * 17 * 19 * (2 * 3 * 2 * 2));
+    return 0;
 }

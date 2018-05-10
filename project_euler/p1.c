@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 int sum_multiple(int limit, int x) {
-    int n_x = (limit - 1) / x; // below limit
+    int n_x = (limit - 1) / x;
     int sum_n_x = n_x * (n_x + 1) / 2;
     return sum_n_x * x;
 }
