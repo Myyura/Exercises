@@ -5,9 +5,9 @@
 #include <math.h>
 #include <stdlib.h>
 
-int is_prime(int64_t x) {
-    for (int64_t i = 2; i < sqrt(x); i++) {
-        if (x % i == 0) {
+int is_prime(int64_t n) {
+    for (int64_t i = 2; i < sqrt(n); i++) {
+        if (n % i == 0) {
             return 0;
         }
     }
