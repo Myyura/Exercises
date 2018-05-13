@@ -27,7 +27,7 @@ int max(int a, int b) {
     return a > b ? a : b;
 }
 
-int enumerate() {
+int enumerate(void) {
     int max_row = 0, max_col = 0, max_dia1 = 0, max_dia2 = 0;
     for (int i = 0; i < 20; i++) {
         for (int j = 0; j < 20; j++) {
