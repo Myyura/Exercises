@@ -28,8 +28,8 @@
 */
 
 /*
-    With the fact that two numbers n and n + 1 have no prime divisors in 
-    common, then d(triangle(n)) = d(n / 2) * d(n + 1) where we suppose that
+    With the fact that two numbers n and n + 1 have no divisors in common, 
+    then d(triangle(n)) = d(n / 2) * d(n + 1) where we suppose that
     n % 2 == 0.
 */
 
