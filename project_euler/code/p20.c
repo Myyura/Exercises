@@ -6,8 +6,7 @@
 #define MAX_DIGITS 10000
 
 int factorial_digit_sum(int n) {
-    int fact[MAX_DIGITS];
-    memset(fact, 0, sizeof(fact));
+    int fact[MAX_DIGITS] = {0};
 
     fact[0] = 1;
     int digits = 0;
