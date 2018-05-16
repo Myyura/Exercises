@@ -1,7 +1,6 @@
 /* Factorial digit sum */
 
 #include <stdio.h>
-#include <string.h>
 
 #define MAX_DIGITS 10000
 
