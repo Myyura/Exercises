@@ -8,7 +8,7 @@ int max_path[100][100] = {-1};
 int read_data(FILE* input) {
     char buffer[1000];
     int lines = 0;
-    while(fgets(buffer, 1000, input) != NULL) {
+    while (fgets(buffer, 1000, input) != NULL) {
         lines++;
         for (int j = 0; j < lines; j++) {
             sscanf(buffer + j * 3, "%d", &triangle[lines - 1][j]);
