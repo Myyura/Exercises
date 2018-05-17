@@ -1,4 +1,5 @@
 /* Highly divisible triangular number */
+/* Myyyura */
 
 #include <stdio.h>
 

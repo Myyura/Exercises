@@ -1,4 +1,5 @@
 /* Largest product in a grid */
+/* Myyyura */
 
 #include <stdio.h>
 

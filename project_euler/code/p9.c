@@ -1,4 +1,5 @@
 /* Special Pythagorean triplet */
+/* Myyyura */
 
 #include <stdio.h>
 

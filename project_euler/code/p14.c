@@ -1,4 +1,5 @@
 /* Longest Collatz sequence */
+/* Myyyura */
 
 #include <stdio.h>
 #include <stdint.h>

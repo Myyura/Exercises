@@ -1,4 +1,5 @@
 /* Power digit sum */
+/* Myyyura */
 
 #include <stdio.h>
 #include <math.h>

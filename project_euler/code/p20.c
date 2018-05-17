@@ -1,4 +1,5 @@
 /* Factorial digit sum */
+/* Myyyura */
 
 #include <stdio.h>
 

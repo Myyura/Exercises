@@ -1,4 +1,5 @@
 /* Summation of primes */
+/* Myyyura */
 
 #include <stdio.h>
 #include <stdint.h>

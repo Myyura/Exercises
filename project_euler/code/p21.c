@@ -1,4 +1,5 @@
 /* Amicable numbers */
+/* Myyyura */
 
 #include <stdio.h>
 #include <string.h>

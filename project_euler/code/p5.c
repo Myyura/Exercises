@@ -1,4 +1,5 @@
 /* Smallest multiple */
+/* Myyyura */
 
 #include <stdio.h>
 #include <stdint.h>

@@ -1,4 +1,5 @@
 /* Largest product in a series */
+/* Myyyura */
 
 #include <stdio.h>
 #include <stdint.h>

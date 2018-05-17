@@ -1,4 +1,5 @@
 /* Sum square difference */
+/* Myyyura */
 
 #include <stdio.h>
 

@@ -1,4 +1,5 @@
 /* Largest palindrome product */
+/* Myyyura */
 
 #include <stdio.h>
 
