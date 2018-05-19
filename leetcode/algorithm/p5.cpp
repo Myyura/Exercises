@@ -17,10 +17,6 @@ public:
     
     // Brute-force but accepted
     std::string longestPalindromeBF(std::string s) {
-        if (s.size() == 0) {
-            return s;
-        }
-
         int start = 0, maxLen = 1;
         for (int i = 0; i < s.size(); i++) {
             for (int j = s.size() - 1; j > i; j--) {
