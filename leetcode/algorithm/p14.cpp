@@ -13,7 +13,7 @@ public:
         std::string prefix = strs[0];
         for (int i = 0; ; i++) {
             for (auto &it : strs) {
-                if (i == it.size() || prefix[i] != it[i]) {
+                if (i == it.size() || prefix.at(i) != it.at(i)) {
                     return prefix.substr(0, i);
                 }  
             }

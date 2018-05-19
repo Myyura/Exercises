@@ -11,10 +11,10 @@ public:
 		std::string result;
 
 		for (int i = roman.size() - 1; i >= 0; i--) {
-			while (num >= value[i])
+			while (num >= value.at(i))
 			{
-				result += roman[i];
-				num -= value[i];
+				result += roman.at(i);
+				num -= value.at(i);
 			}
 		}
 
