@@ -1,3 +1,8 @@
+/**
+ * Reverse Integer
+ * Myyura
+ */
+
 int reverse(int x) {
     long int result = 0;
     int flag = x > 0 ? 1 : -1;
