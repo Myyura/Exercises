@@ -10,7 +10,7 @@ public:
             return "";
         }
 
-        std::string prefix = strs[0];
+        std::string prefix = strs.at(0);
         for (int i = 0; ; i++) {
             for (auto &it : strs) {
                 if (i == it.size() || prefix.at(i) != it.at(i)) {
