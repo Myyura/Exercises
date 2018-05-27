@@ -4,6 +4,7 @@
  */
 
 #include <stdio.h>
+#include <stdint.h>
 
 // from problem 10
 int is_prime_6k_optimization(int n) {
