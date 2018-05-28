@@ -60,7 +60,7 @@ int64_t total_value_of_name_list(int n) {
 }
 
 int main(void) {
-    FILE *names = fopen("../data/p22_names.txt", "r");
+    FILE *names = fopen("../../data/p22_names.txt", "r");
     int num_names = read_data(names);
     printf("%lld\n", total_value_of_name_list(num_names));
     return 0;

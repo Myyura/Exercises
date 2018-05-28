@@ -54,11 +54,11 @@ int maximum_path_sum_dp(int n) {
 }
 
 int main(void) {
-    FILE *data_18 = fopen("../data/p18.txt", "r");
+    FILE *data_18 = fopen("../../data/p18.txt", "r");
     int line_18 = read_data(data_18);
     fclose(data_18);
 
-    FILE *data_67 = fopen("../data/p67.txt", "r");
+    FILE *data_67 = fopen("../../data/p67.txt", "r");
     int line_67 = read_data(data_67);
     fclose(data_67);
 
