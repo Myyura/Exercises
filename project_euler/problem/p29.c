@@ -20,7 +20,7 @@
  */
 
 /**
- * Time complexity O(ab)
+ * Time complexity O(ab * log(b))
  */
 int count_distinct_powers(int a, int b) {
     int max_exp = 1;
