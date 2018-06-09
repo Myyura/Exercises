@@ -1,13 +1,22 @@
-/* Lattice paths */
-/* Myyyura */
+/**
+ * Lattice paths
+ * Myyyura
+ */
+
+/**
+ * Starting in the top left corner of a 2×2 grid, and only being able to move to 
+ * the right and down, there are exactly 6 routes to the bottom right corner.
+ * 
+ * How many such routes are there through a 20×20 grid?
+ */
 
 #include <stdio.h>
 #include <stdint.h>
 
-/*
-    https://en.wikipedia.org/wiki/Lattice_path
-    C(n, 2n)
-*/
+/**
+ * https://en.wikipedia.org/wiki/Lattice_path
+ * C(n, 2n)
+ */
 
 int64_t num_lattice_paths_combinatorial(int n) {
     int64_t result = 1;
@@ -19,10 +28,10 @@ int64_t num_lattice_paths_combinatorial(int n) {
     return result;
 }
 
-/*
-    To get to position [i, j] in one step, we must already in position 
-    [i - 1, j] or [i, j - 1].
-*/
+/**
+ * To get to position [i, j] in one step, we must already in position 
+ * [i - 1, j] or [i, j - 1].
+ */
 
 int64_t num_lattice_paths_dp(int n) {
     int64_t grid[n + 1][n + 1];

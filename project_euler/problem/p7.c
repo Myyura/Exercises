@@ -1,15 +1,25 @@
-/* 10001st prime */
-/* Myyyura */
+/**
+ * 10001st prime
+ * Myyyura
+ */
+
+/**
+ * By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see 
+ * that the 6th prime is 13.
+ * 
+ * What is the 10 001st prime number?
+ */
+
 
 #include <stdio.h>
 #include <stdint.h>
 #include <math.h>
 
-/*
-    an integer can be represents as (6k + i) for some integer k and for
-    i = -1, 0, 1, 2, 3 or 4. 2 divides 6k, (6k + 2) and (6k + 4). 3 divides
-    (6k + 3).
-*/
+/**
+ * an integer can be represents as (6k + i) for some integer k and for
+ * i = -1, 0, 1, 2, 3 or 4. 2 divides 6k, (6k + 2) and (6k + 4). 3 divides
+ * (6k + 3).
+ */
 
 int is_prime_6k_optimization(int64_t n) {
     // assume that n > 0

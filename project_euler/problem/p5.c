@@ -1,5 +1,15 @@
-/* Smallest multiple */
-/* Myyyura */
+/**
+ * Smallest multiple
+ * Myyyura 
+ */
+
+/**
+ * 2520 is the smallest number that can be divided by each of the numbers from 
+ * 1 to 10 without any remainder.
+ * 
+ * What is the smallest positive number that is evenly divisible by all of the 
+ * numbers from 1 to 20?
+ */
 
 #include <stdio.h>
 #include <stdint.h>
@@ -20,32 +30,30 @@ int64_t lcm(int64_t a, int64_t b) {
 
 int64_t find_lcm_of_range(int64_t lb, int64_t ub) {
     int64_t result = lcm(lb, lb + 1);
-    for (int64_t i = lb + 2; i <= ub; i++) {
+    for (int64_t i = lb; i <= ub; i++) {
         result = lcm(result, i);
     }
 
     return result;
 }
 
-/*
-    prime numbers in [1, 20] : 2, 3, 5, 7, 11, 13, 17, 19;
-    every prime number will be a factor of the answer.
-
-    20 = 2 * 2 * 5;
-    18 = 2 * 3 * 3;
-    16 = 2 * 2 * 2 * 2;
-    15 = 3 * 5;
-    14 = 2 * 7;
-    12 = 2 * 2 * 3;
-    10 = 2 * 5;
-    9 = 3 * 3;
-    8 = 2 * 2 * 2;
-    6 = 2 * 3;
-    4 = 2 * 2;
-
-    We need four 2 (for 16) and one more 3 (for 18).
-    2 * 3 * 5 * 7 * 11 * 13 * 17 * 19 * (2 * 2 * 2 * 3) = 232792560
-*/
+/**
+ * prime numbers in [1, 20] : 2, 3, 5, 7, 11, 13, 17, 19;
+ * every prime number will be a factor of the answer.
+ * 20 = 2 * 2 * 5;
+ * 18 = 2 * 3 * 3;
+ * 16 = 2 * 2 * 2 * 2;
+ * 15 = 3 * 5;
+ * 14 = 2 * 7;
+ * 12 = 2 * 2 * 3;
+ * 10 = 2 * 5;
+ * 9 = 3 * 3;
+ * 8 = 2 * 2 * 2;
+ * 6 = 2 * 3;
+ * 4 = 2 * 2;
+ * We need four 2 (for 16) and one more 3 (for 18).
+ * 2 * 3 * 5 * 7 * 11 * 13 * 17 * 19 * (2 * 2 * 2 * 3) = 232792560
+ */
 
 int main(void) {
     printf("%lld\n", find_lcm_of_range(1, 20));
