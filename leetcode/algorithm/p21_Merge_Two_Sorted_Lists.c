@@ -56,3 +56,26 @@ struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2) {
 
     return head;
 }
+
+// Without creating a new list
+struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2) {
+    if (l1 == NULL) { return l2; }
+    if (l2 == NULL) { return l1; }
+
+    struct ListNode *head = l1->val < l2->val ? l1 : l2;
+    struct ListNode *pPre = head, *p = l1->val < l2->val ? l2 : l1;
+    for (; p != NULL; pPre = pPre->next) {
+        if (pPre->next == NULL) {
+            pPre->next = p;
+            break;
+        }
+
+        if (pPre->next->val > p->val) {
+            struct ListNode *temp = pPre->next;
+            pPre->next = p;
+            p = p->next;
+            pPre->next->next = temp;
+        }
+    }
+    return head;
+}
