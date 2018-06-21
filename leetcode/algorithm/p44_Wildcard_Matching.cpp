@@ -55,7 +55,15 @@
 
 class Solution {
 public:
-    // A brute-force recursive algorithm, TLE
+    /**
+     * Basic idea: 
+     * Suppose that we are comparing s[i] with a star in p[j].
+     * If s[i, ...] matches p[j + 1, ...], then we are lucky, it finishes.
+     * Otherwise we should skip the character in s[i] (s[i] now matches the star),
+     * and check if s[i + 1, ...] matches p[j + 1, ...]. And then repeats.
+     * 
+     * Recursive version does not work well, TLE.
+     */
     bool isMatch(std::string s, std::string p) {
         if (p.empty()) { return s.empty(); }
         if (s.empty()) {
@@ -80,15 +88,7 @@ public:
         return curMatched && isMatch(s.substr(1), p.substr(1));
     }
 
-    /**
-     * Basic idea: 
-     * Suppose that we are comparing s[i] with a star in p[j].
-     * If s[i, ...] matches p[j + 1, ...], then we are lucky, it finishes.
-     * Otherwise we should skip the character in s[i] (s[i] now matches the star),
-     * and check if s[i + 1, ...] matches p[j + 1, ...]. And then repeats.
-     *
-     * O(mn) the worst case.
-     */
+    // O(mn) the worst case.
     bool isMatch(std::string s, std::string p) {
         int lastStar = -1, lastMactch, j = 0;
         for (int i = 0; i < s.size();) {
