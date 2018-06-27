@@ -52,7 +52,7 @@ public:
         reverse(nums, k + 1);
     }
     
-    std::vector<std::vector<int>> permute(vector<int>& nums) {
+    std::vector<std::vector<int>> permute(std::vector<int>& nums) {
         std::vector<std::vector<int>> result;
         unsigned long long total = 1;
         for (int i = 1; i <= nums.size(); i++) { total *= i; }
