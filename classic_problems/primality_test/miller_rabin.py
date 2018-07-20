@@ -35,7 +35,7 @@ def miller_rabin(n, k):
 
     d = n - 1
     while d % 2 == 0:
-        d /= 2
+        d //= 2
     
     for _ in range(0, k):
         if test(d, n) == False:
