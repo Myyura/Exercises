@@ -46,7 +46,7 @@ public:
         _state(State::OPEN), _current_size(0), _max_size(max_size), _mode(mode) 
     {
         if (max_size <= 0) {
-            throw std::invalid_argument("max_size must be greater than 0.")
+            throw std::invalid_argument("max_size must be greater than 0.");
         }
     }
 
@@ -68,7 +68,7 @@ public:
                 _current_size--;
             } else if (_mode == 1) {
                 // wait mode, 等待队列有空位又或者队列在其他地方被关闭
-                _cv_push.wait(lock, [&]{ return !full() || _state != State::OPEN; })
+                _cv_push.wait(lock, [&]{ return !full() || _state != State::OPEN; });
             }
         }
 
@@ -78,7 +78,7 @@ public:
         }
 
         _current_size++;
-        _queue.push(v)
+        _queue.push(v);
 
         _cv_pop.notify_one();
     }
@@ -93,7 +93,7 @@ public:
                 _current_size--;
             } else if (_mode == 1) {
                 // wait mode, 等待队列有空位又或者队列在其他地方被关闭
-                _cv_push.wait(lock, [&]{ return !full() || _state != State::OPEN; })
+                _cv_push.wait(lock, [&]{ return !full() || _state != State::OPEN; });
             }
         }
 
@@ -103,7 +103,7 @@ public:
         }
 
         _current_size++;
-        _queue.push(v)
+        _queue.push(v);
 
         _cv_pop.notify_one();
     }
@@ -111,13 +111,13 @@ public:
     int pop(T& v) {
         std::unique_lock<std::mutex> lock(_mutex);
         // 当队列为空且队列未被关闭时，等待数据压入
-        _cv_pop.wait(lock, [&]{ return !empty() || _state == State::CLOSED; })
+        _cv_pop.wait(lock, [&]{ return !empty() || _state == State::CLOSED; });
         if (empty() && _state == State::CLOSED) {
             return 0;
         }
         
-        _current_size -= 1;
-        v = _queue.front()
+        _current_size--;
+        v = _queue.front();
 
         _cv_push.notify_one();
 
