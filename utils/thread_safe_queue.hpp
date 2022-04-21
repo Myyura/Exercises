@@ -45,8 +45,13 @@ public:
     explicit ThreadSafeQueue(size_t max_size = 1, int mode = 0): \
         _state(State::OPEN), _current_size(0), _max_size(max_size), _mode(mode) 
     {
+        printf("queue max_size: %ld, mode: %d\n", max_size, mode);
         if (max_size <= 0) {
             throw std::invalid_argument("max_size must be greater than 0.");
+        }
+
+        if (!(mode == 0 || mode == 1)) {
+            throw std::invalid_argument("mode must be 0 or 1.");
         }
     }
 
@@ -55,12 +60,13 @@ public:
     // 禁止拷贝
     ThreadSafeQueue& operator=(const ThreadSafeQueue&) = delete;
 
-    bool full(void) { return _max_size >= _current_size; }
+    bool full(void) { return _current_size >= _max_size; }
     bool empty(void) { return _current_size <= 0; }
 
     // 压入元素
     void push(T const& v) {
         std::unique_lock<std::mutex> lock(_mutex);
+        // printf("queue size: %ld\n", _current_size);
         if (full()) {
             if (_mode == 0) {
                 // drop mode, 直接pop掉一个元素
@@ -86,6 +92,7 @@ public:
     // 压入元素
     void push(T && v) {
         std::unique_lock<std::mutex> lock(_mutex);
+        // printf("queue size: %ld\n", _current_size);
         if (full()) {
             if (_mode == 0) {
                 // drop mode, 直接pop掉一个元素
@@ -111,6 +118,7 @@ public:
     int pop(T& v) {
         std::unique_lock<std::mutex> lock(_mutex);
         // 当队列为空且队列未被关闭时，等待数据压入
+        printf("queue size: %ld\n", _current_size);
         _cv_pop.wait(lock, [&]{ return !empty() || _state == State::CLOSED; });
         if (empty() && _state == State::CLOSED) {
             return 0;
@@ -118,6 +126,7 @@ public:
         
         _current_size--;
         v = _queue.front();
+        _queue.pop();
 
         _cv_push.notify_one();
 
